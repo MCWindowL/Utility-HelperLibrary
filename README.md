@@ -28,7 +28,7 @@ dotnet add package Utility_HelperLibrary
 
     ```csharp
     <Reference Include="UtilHelper">
-    <HintPath>(your project path)\UtilityHelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.dll</HintPath>
+    <HintPath>(your project path)\Utility-HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.dll</HintPath>
     </Reference>
     ```
   4. Then add the library using: 
