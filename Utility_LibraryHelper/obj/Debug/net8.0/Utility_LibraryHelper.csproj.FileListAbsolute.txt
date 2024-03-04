@@ -1,0 +1,11 @@
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\bin\Debug\net8.0\Utility_LibraryHelper.deps.json
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\bin\Debug\net8.0\Utility_LibraryHelper.dll
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\bin\Debug\net8.0\Utility_LibraryHelper.pdb
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\Utility_LibraryHelper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\Utility_LibraryHelper.AssemblyInfoInputs.cache
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\Utility_LibraryHelper.AssemblyInfo.cs
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\Utility_LibraryHelper.csproj.CoreCompileInputs.cache
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\Utility_LibraryHelper.dll
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\refint\Utility_LibraryHelper.dll
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\Utility_LibraryHelper.pdb
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility_LibraryHelper\obj\Debug\net8.0\ref\Utility_LibraryHelper.dll

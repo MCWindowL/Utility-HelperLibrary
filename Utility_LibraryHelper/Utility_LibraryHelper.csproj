@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>utility-helper-library</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>MCWindowL</Authors>
+    <Description>A utility library containing useful methods for various tasks.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Include your files here -->
+    <Content Include="bin\Debug\net8.0\Utility_LibraryHelper.dll" Pack="true" PackagePath="lib\net8.0" />
+  </ItemGroup>
+
+</Project>
