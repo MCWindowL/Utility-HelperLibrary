@@ -1,0 +1,11 @@
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.deps.json
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.dll
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.pdb
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\CLI_HelperLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\CLI_HelperLibrary.AssemblyInfoInputs.cache
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\CLI_HelperLibrary.AssemblyInfo.cs
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\CLI_HelperLibrary.csproj.CoreCompileInputs.cache
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\CLI_HelperLibrary.dll
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\refint\CLI_HelperLibrary.dll
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\CLI_HelperLibrary.pdb
+C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\obj\Debug\net8.0\ref\CLI_HelperLibrary.dll
