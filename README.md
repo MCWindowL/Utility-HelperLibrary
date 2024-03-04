@@ -26,16 +26,16 @@ dotnet add package Utility_HelperLibrary
  2. Extract the library and open your project, In your project create a folder named `lib` or any names you like.
  3. Then, In your `.csproj` file, add these two line:
 
-    ```csharp
-    <Reference Include="UtilHelper">
-    <HintPath>(your project path)\Utility-HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.dll</HintPath>
+```csproj
+  <ItemGroup>
+    <Reference Include="Utility_LibraryHelper">
+      <!-- Update the HintPath based on your project path -->
+      <HintPath>[Library Path]\Utility_LibraryHelper\bin\Debug\net8.0\Utility_LibraryHelper.dll</HintPath>
     </Reference>
-    ```
-  4. Then add the library using: 
-  ```csharp 
-  using UtilHelper;
+  </ItemGroup>
   ```
-4.a. Your `.csproj` file should look like this:
+    
+3.a. Your `.csproj` file should look like this:
 ```csproj
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -47,143 +47,279 @@ dotnet add package Utility_HelperLibrary
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="UtilHelper">
-<!-- Update the HintPath based on your project path -->
-      <HintPath>C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility-HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.dll</HintPath>
+    <Reference Include="Utility_LibraryHelper">
+      <!-- Update the HintPath based on your project path -->
+      <HintPath>[Library Path]\Utility_LibraryHelper\bin\Debug\net8.0\Utility_LibraryHelper.dll</HintPath>
     </Reference>
   </ItemGroup>
 
 </Project>
-
 ```
-  5. That's it! Now you can use `util.(some command)` to run any methods based on your needs and preferences.
+  4. Then add the library using: 
+  ```csharp 
+using Utility_LibraryHelper;
+  ```
 
+  5. That's it! Now you can use `util.(some command)` to run any methods based on your needs and preferences.
+- **If you don't understand, you can view the [source code](https://github.com/MCWindowL/Utility-HelperLibrary/blob/main/Utility-HelperLibrary/Class1.cs)**
 
 ## 2. Examples
 
 Here are some examples demonstrating how to use the Utility Helper Library methods:
+- **INFO: (This will only works for string type) If you want to use like a path, for example: `"C:\Users\User"`, you can't just type that in, it will give you an error, instead, you should use `@"C:\Users\User"`, this will allow you to use `\` or `/` in the string but, if you resist, you can use `"C:\\Users\\User`, that will work as well.**
 
 ```csharp
-using UtilHelper;
+using System;
+using System.Threading.Tasks;
+using Utility_LibraryHelper;
 
 class Program
 {
     static async Task Main(string[] args)
     {
-        // Example of sending an HTTP request
-        await util.HttpReq("https://example.com/api/data");
+        // HTTP Request Example
+        await util.HttpReq("https://jsonplaceholder.typicode.com/posts/1");
 
-        // Example of downloading a file
-        util.DownloadFile("https://example.com/file.txt", "downloaded_file.txt");
+        // .NET Version Identifier Example
+        int version;
+        util.DotNetVersionIdentifier(out version);
+        Console.WriteLine($".NET Version: {version}");
 
-        // Example of moving a file
-        util.MoveFile("source_file.txt", "destination_folder/source_file.txt");
+        // Log Info Example
+        util.LogInfo("This is a log message.", "log.txt");
 
-        // Example of creating a directory
-        util.CreateDirectory("new_directory");
+        // Download File Example
+        await util.DownloadFile("https://example.com/sample.txt", "sample.txt");
 
-        // Example of checking if a directory exists
-        bool directoryExists = util.DirectoryExists("existing_directory");
+        // Move File Example
+        util.MoveFile("source.txt", "destination.txt");
 
-        // Example of checking if a file exists
-        bool fileExists = util.FileExists("existing_file.txt");
+        // Create Directory Example
+        util.CreateDirectory("NewDirectory");
 
-        // Example of logging
-        util.LogInfo("Log message", "log_file.txt");
+        // Directory Exists Example
+        bool directoryExists = util.DirectoryExists("NewDirectory");
+        Console.WriteLine($"Directory Exists: {directoryExists}");
+
+        // File Exists Example
+        bool fileExists = util.FileExists("sample.txt");
+        Console.WriteLine($"File Exists: {fileExists}");
+
+        // Read File Example
+        string fileContent = util.ReadFile("sample.txt");
+        Console.WriteLine($"File Content: {fileContent}");
+
+        // Write File Example
+        util.WriteFile("output.txt", "This is the content to write.");
+
+        // Append to File Example
+        util.AppendToFile("output.txt", " This content will be appended.");
+
+        // Delete Directory Example
+        util.DeleteDirectory("NewDirectory");
+
+        // Copy Directory Example
+        util.CopyDirectory("sourceDirectory", "destinationDirectory");
+
+        // Get Files in Directory Example
+        string[] files = util.GetFilesInDirectory("sourceDirectory");
+        Console.WriteLine($"Files in Directory: {string.Join(", ", files)}");
+
+        // Get Directories in Directory Example
+        string[] directories = util.GetDirectoriesInDirectory("sourceDirectory");
+        Console.WriteLine($"Directories in Directory: {string.Join(", ", directories)}");
+
+        // Get File Name Without Extension Example
+        string fileNameWithoutExtension = util.GetFileNameWithoutExtension("example.txt");
+        Console.WriteLine($"File Name Without Extension: {fileNameWithoutExtension}");
+
+        // Get File Extension Example
+        string fileExtension = util.GetFileExtension("example.txt");
+        Console.WriteLine($"File Extension: {fileExtension}");
+
+        // Move Directory Example
+        util.MoveDirectory("sourceDirectory", "destinationDirectory");
+
+        // Delete File If Exists Example
+        util.DeleteFileIfExists("fileToDelete.txt");
+
+        // Get File Name Example
+        string fileName = util.GetFileName("example.txt");
+        Console.WriteLine($"File Name: {fileName}");
+
+        // Get Directory Name Example
+        string directoryName = util.GetDirectoryName("C:\\Directory\\Subdirectory\\");
+        Console.WriteLine($"Directory Name: {directoryName}");
+
+        // Get File Size Example
+        long fileSize = util.GetFileSize("example.txt");
+        Console.WriteLine($"File Size: {fileSize}");
+
+        // Compress File Example
+        await util.CompressFile("sample.txt", "compressedSample.gz");
+
+        // Decompress File Example
+        await util.DecompressFile("compressedSample.gz", "decompressedSample.txt");
+
+        // Encrypt File Example
+        await util.EncryptFile("sample.txt", "encryptedSample.dat");
+
+        // Decrypt File Example
+        string encryptedFilePath = "path/to/encrypted/file";
+        string decryptedFilePath = "path/to/save/decrypted/file";
+        string key = "your_secret_key"; // The same key used for encryption
+
+        await Util.DecryptFile(encryptedFilePath, decryptedFilePath, key, showVerbose: true);
+
     }
 }
+
 ```
 
 ## API Reference
-# `Util` Class Methods
+# `util` Class Methods
+- **There are over 26 different methods to use which is:**
+- **INFO: All of these contain `ShowVerbose` as boolean which can be used to print additional information following the methods you are using, if you wanted to view/see the additional information, you can just change from the default (which is `false` to be exact) to true by typing `ShowVerbose: true`, if you don't want it enabled, you can just leave it empty**
 ```csharp
-1. HttpReq(string httpRequestURL, CancellationToken cancellationToken = default); 
-// This will sends an HTTP request asynchronously.
+0. util.HttpReq(string httpRequestURL, CancellationToken cancellationToken = default, bool showVerbose = false);
+// This method sends an HTTP GET request to the specified URL ("https://jsonplaceholder.typicode.com/posts/1") and prints the response content to the console.
 ```
+
 ```csharp
-2. DotNetVersionIdentifier(out int outputVersion);
-// Identifies the version of the .NET runtime environment.
+1. util.DotNetVersionIdentifier(out int outputVersion, bool showVerbose = false);
+// This method retrieves the current .NET runtime version and outputs it to the console.
 ```
+
 ```csharp
-3. LogInfo(string loggingMessage, string filePath);
-// Logs a message to a file.
+2. util.LogInfo(string loggingMessage, string filePath, bool showVerbose = false);
+// This method logs a message ("This is a log message.") to a log file named "log.txt" along with a timestamp.
 ```
+
 ```csharp
-4. DownloadFile(string URL, string DestinationPath);
-// Downloads a file from a URL.
+3. util.DownloadFile(string URL, string destinationPath, bool showVerbose = false);
+// This method downloads a file from the specified URL ("https://example.com/sample.txt") and saves it to the local file system with the name "sample.txt".
 ```
+
 ```csharp
-5. MoveFile(string sourceFilePath, string destinationFilePath);
-// Moves a file to a new location.
+4. util.MoveFile(string sourceFilePath, string destinationFilePath, bool showVerbose = false);
+// This method moves a file from the source path ("source.txt") to the destination path ("destination.txt").
 ```
+
 ```csharp
-6. CreateDirectory(string directoryPath);
-// Creates a new directory.
+5. util.CreateDirectory(string directoryPath, bool showVerbose = false);
+// This method creates a new directory named "NewDirectory" in the current working directory.
 ```
+
 ```csharp
-7. DirectoryExists(string directoryPath);
-// Checks if a directory exists.
+6. util.DirectoryExists(string directoryPath, bool showVerbose = false);
+// This method checks if the directory "NewDirectory" exists and prints the result (true or false) to the console.
 ```
+
 ```csharp
-8. FileExists(string filePath);
-// Checks if a file exists.
+7. util.FileExists(string filePath, bool showVerbose = false);
+// This method checks if the file "sample.txt" exists and prints the result (true or false) to the console.
 ```
+
 ```csharp
-9. ReadFile(string filePath);
-// Reads the contents of a file.
+8. util.ReadFile(string filePath, bool showVerbose = false);
+// This method reads the contents of the file "sample.txt" and prints it to the console.
 ```
+
 ```csharp
-10. WriteFile(string filePath, string content);
-// Writes content to a file.
+9. util.WriteFile(string filePath, string content, bool showVerbose = false);
+// This method writes the content "This is the content to write." to a new file named "output.txt".
 ```
+
 ```csharp
-11. AppendToFile(string filePath, string content);
-// Appends content to a file.
+10. util.AppendToFile(string filePath, string content, bool showVerbose = false);
+// This method appends the content " This content will be appended." to the existing file "output.txt".
 ```
+
 ```csharp
-12. DeleteDirectory(string directoryPath);
-// Deletes a directory and its contents.
+11 .util.DeleteDirectory(string directoryPath, bool showVerbose = false);
+// This method deletes the directory "NewDirectory" and all its contents.
 ```
+
 ```csharp
-13. CopyDirectory(string sourceDirectoryPath, string destinationDirectoryPath);
-// Copies a directory and its contents to a new location.
+12. util.CopyDirectory(string sourceDirectoryPath, string destinationDirectoryPath, bool showVerbose = false);
+// This method recursively copies the contents of the directory "sourceDirectory" to "destinationDirectory".
 ```
+
 ```csharp
-14. GetFilesInDirectory(string directoryPath);
-// Gets a list of files in a directory.
+13. util.GetFilesInDirectory(string directoryPath, bool showVerbose = false)
+// This method retrieves an array of file paths in the directory "sourceDirectory" and prints them to the console.
 ```
+
 ```csharp
-15. GetDirectoriesInDirectory(string directoryPath);
-// Gets a list of directories in a directory.
+14. util.GetDirectoriesInDirectory(string directoryPath, bool showVerbose = false)
+// This method retrieves an array of directory paths in the directory "sourceDirectory" and prints them to the console.
 ```
+
 ```csharp
-16. GetFileNameWithoutExtension(string filePath);
-// Gets the file name without the extension.
+15. util.GetFileNameWithoutExtension(string filePath, bool showVerbose = false);
+// This method retrieves the file name without the extension from the path "example.txt" and prints it to the console.
 ```
+
 ```csharp
-17. GetFileExtension(string filePath);
-// Gets the file extension.
+16. util.GetFileExtension(string filePath, bool showVerbose = false);
+// This method retrieves the file extension from the path "example.txt" and prints it to the console.
 ```
+
 ```csharp
-18. MoveDirectory(string sourceDirectoryPath, string destinationDirectoryPath);
-// Moves a directory to a new location.
+17. util.MoveDirectory(string sourceDirectoryPath, string destinationDirectoryPath, bool showVerbose = false);
+// This method moves the directory "sourceDirectory" to "destinationDirectory".
 ```
+
 ```csharp
-19. DeleteFileIfExists(string filePath);
-// Deletes a file if it exists.
+18. util.DeleteFileIfExists(string filePath, bool showVerbose = false);
+// This method deletes the file "fileToDelete.txt" if it exists.
 ```
+
 ```csharp
-20. GetFileName(string filePath);
-// Gets the file name from a file path.
+19. util.GetFileName(string filePath, bool showVerbose = false);
+// This method retrieves the file name from the path "example.txt" and prints it to the console.
 ```
+
 ```csharp
-21. GetDirectoryName(string directoryPath);
-// Gets the directory name from a directory path.
+20. util.GetDirectoryName(string directoryPath, bool showVerbose = false);
+// This method retrieves the directory name from the path "C:\Directory\Subdirectory" and prints it to the console.
 ```
+
 ```csharp
-22. GetFileSize(string filePath)
-// Gets the size of a file.
+21. util.GetFileSize(string filePath, bool showVerbose = false)
+// This method retrieves the size of the file "example.txt" in bytes and prints it to the console.
 ```
+
+```csharp
+22. util.CompressFile(string filePath, string compressedFilePath, bool showVerbose = false);
+// This method compresses the file "sample.txt" using GZip compression and saves the compressed file as "compressedSample.gz".
+```
+
+```csharp
+23. util.DecompressFile(string compressedFilePath, string decompressedFilePath, bool showVerbose = false);
+// This method decompresses the file "compressedSample.gz" and saves the decompressed content as "decompressedSample.txt".
+```
+
+```csharp
+24. util.EncryptFile(string filePath, string encryptedFilePath, bool showVerbose = false);
+// This method encrypts the file "sample.txt" using AES encryption and saves the encrypted content as "encryptedSample.dat".
+```
+
+```csharp
+25. util.DecryptFilestring encryptedFilePath, string decryptedFilePath, string key, bool showVerbose = false);
+```
+## Dependencies used (if you wanted to know):
+```csharp
+ using System;
+ using System.IO;
+ using System.Net;
+ using System.Net.Http;
+ using System.Threading;
+ using System.Threading.Tasks;
+ using System.Security.Cryptography;
+ using System.IO.Compression;
+```
+
 
 ## License
 This library is provided under the MIT License.
