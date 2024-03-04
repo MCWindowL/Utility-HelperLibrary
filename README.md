@@ -49,7 +49,7 @@ dotnet add package Utility_HelperLibrary
   <ItemGroup>
     <Reference Include="UtilHelper">
 <!-- Update the HintPath based on your project path -->
-      <HintPath>C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\CLI_HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.dll</HintPath>
+      <HintPath>C:\Users\MZ\Desktop\Programming\C-Sharp\Library.Custom\Utility-HelperLibrary\bin\Debug\net8.0\CLI_HelperLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
 
