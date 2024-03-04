@@ -2,7 +2,7 @@
 ****
 ## Overview
 
-The Utility Helper Library is a custom library developed for .NET 6 and above by ZF.prg. It provides a collection of utility methods for common tasks related to HTTP requests, file and directory manipulation, and logging.
+The Utility Helper Library is a custom library developed for **.NET 8.0.1 by MCWindowL**. It provides a collection of utility methods for common tasks related to HTTP requests, file, directory manipulation, and logging.
 
 ## Features
 
